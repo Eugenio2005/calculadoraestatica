@@ -9,30 +9,22 @@ package com.miejemplo.utilidades;
  * @author usuario
  */
 
-public class Calculadora {
+public class Calculadora extends superCalculadora implements interfaceCalculadora {
 
     public int resultado;
     
+    @Override
     public int sumar(int sumando1, int sumando2) {
         return sumando1 + sumando2;
     }
 
-    public static int restar(int operador1, int operador2) {
+    @Override
+    public int restar(int operador1, int operador2) {
         return operador1 - operador2;
     }
 
-    public static int multiplicar(int operador1, int operador2) {
-        return operador1 * operador2;
-    }
 
-    public static int dividir(int operador1, int operador2) {
-        if (operador2 == 0) {
-            throw new ArithmeticException("División por cero");
-        }
-        return operador1 / operador2;
-    }
-
-    public static int modulo(int operador1, int operador2) {
+    public int modulo(int operador1, int operador2) {
         if (operador2 == 0) {
             throw new ArithmeticException("Módulo por cero");
         }
